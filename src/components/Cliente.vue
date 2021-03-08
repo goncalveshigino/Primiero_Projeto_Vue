@@ -1,9 +1,13 @@
 <template>
    <div id="cliente">
-    <h2 id=cliente-nome>{{nome}}</h2>
-    <h3> Descricao do cliente: {{descricao}}</h3>
-    {{2*6+5}}
-    <hr>
+       <!--input type="text" :value="nome"-->
+       <!--input type="text" v-model="nome"-->
+       <h4> Nome: {{cliente.nome}}</h4>
+       <hr>
+       <p>Email: {{cliente.email}}</p>
+         <hr>
+       <p> Idade: {{cliente.idade}}</p>
+
    </div>
 </template>
 
@@ -12,12 +16,15 @@
 export default {
    data(){
        return {
-           nome:"Gonza Luiz",
-           numero:" ",
-           emai:"",
-           idade:0,
-           descricao:"Filho do tio Higino e da tia Nanda, gajo mau"
+          
        }
+   },
+
+   props: {
+      nome: String,
+      email: String,
+      idade: Number,
+      cliente: Object
    }
 }
 </script>
@@ -25,8 +32,11 @@ export default {
 <style scoped>
 
     #cliente {
+        background-color: #ECE5E3;
         max-width: 600px;
-        height: 120px;
+        height: 150px;
+        padding: 1%;
+        margin-top: 2%;
     }
 
     

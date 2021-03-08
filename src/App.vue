@@ -1,7 +1,11 @@
 <template>
 
   <div id="app">
-      <Cliente/>  
+      <input type="text" v-model="clienteHigino.nome">
+      <Cliente :cliente="clienteHigino"/>  
+      <Cliente :cliente="clienteHigino"/>  
+      <Cliente :cliente="clienteHigino"/>  
+      <Cliente :cliente="clienteHigino"/>   
   </div>
   
 </template>
@@ -13,6 +17,20 @@ import Cliente from './components/Cliente';
 export default {
 
  name: 'App',
+ data(){
+   return {
+      nomeDoHigino: "Gonçalves Luís Higino",
+
+      clienteHigino: {
+
+        nome: "Gonçalves Higino",
+
+        email: "gonza@gmail.com",
+
+        idade: 23
+      }
+   }
+ },
  components: {
    Cliente,
   // Produto
