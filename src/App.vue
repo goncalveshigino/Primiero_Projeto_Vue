@@ -2,6 +2,10 @@
 
   <div id="app">
 
+    <div class="buttons">
+       <button class="button is-primary">Primary</button>
+       <button class="button is-link">Link</button>
+    </div>
     <h3> Cadastro: </h3>
        <small id="nomeError" v-show="deuErro"> Nome invalido tente novamente</small><br>
         <input type="text" placeholder="nome" v-model="nomeField"><br>
