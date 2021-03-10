@@ -16,7 +16,7 @@
         <Cliente :cliente="cliente" @meDelete="deletarUsuario($event)"/>
 
     
-        <h4> Edicao: </h4> 
+        <h4>Edicao:</h4><br>
 
         <input type="text" v-model="cliente.nome">
         <input type="text" v-model="cliente.email">

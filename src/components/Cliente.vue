@@ -6,8 +6,11 @@
        <p v-if="showAge === true"> Idade: {{cliente.idade}}</p>
        <p v-else> O usuario escondeu a idade </p>
        <button @click="mudarCor($event)">Mudar cor!</button>
-       <button @click="emitirEnventoDelete">Deletar</button>
-
+       <button @click="emitirEnventoDelete">Deletar</button><br>
+       <hr>
+       <hr>
+       <h4>Id:{{ idEspecial }}</h4>
+       
    </div>
 </template>
 
@@ -40,6 +43,11 @@ export default {
        },
        processarNome: function(value){
           return "stack_code." +  value.toUpperCase();
+       }
+   },
+   computed: {
+       idEspecial: function(){
+            return ( this.cliente.id  + this.cliente.email +  this.cliente.nome).toUpperCase();
        }
    }
 }
