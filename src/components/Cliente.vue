@@ -1,8 +1,8 @@
 <template>
    <div :class="{'cliente': !isPremium, 'cliente-premium': isPremium}">
 
-       <h4> Nome: {{cliente.nome}}</h4>
-       <p>Email: {{cliente.email}}</p>
+       <h4> Nome: {{cliente.nome |  processarNome}}</h4>
+       <p>Email: {{cliente.email | processarEmail}}</p>
        <p v-if="showAge === true"> Idade: {{cliente.idade}}</p>
        <p v-else> O usuario escondeu a idade </p>
        <button @click="mudarCor($event)">Mudar cor!</button>
@@ -32,6 +32,14 @@ export default {
        emitirEnventoDelete: function(){
           console.log("Emitindo do Filho");
           this.$emit("meDelete", {idCliente: this.cliente.id,curso: "Formacao node.js", emPromocao: true, component: this});
+       }
+   },
+   filters: {
+       processarEmail: function(value){
+          return value.toUpperCase();
+       },
+       processarNome: function(value){
+          return "stack_code." +  value.toUpperCase();
        }
    }
 }
